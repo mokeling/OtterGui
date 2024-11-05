@@ -236,7 +236,7 @@ public class ItemSelector<T>
             {
                 _dragDropData = idx;
                 ImGui.SetDragDropPayload(MoveLabel, IntPtr.Zero, 0);
-                ImGui.TextUnformatted($"Reordering {idx + 1}...");
+                ImGui.TextUnformatted($"重新排序 {idx + 1}...");
             }
         }
 
@@ -270,7 +270,7 @@ public class ItemSelector<T>
         var       newFilter = Filter;
         using var style     = ImRaii.PushStyle(ImGuiStyleVar.FrameRounding, 0);
         ImGui.SetNextItemWidth(width);
-        var enterPressed = ImGui.InputTextWithHint(string.Empty, "Filter...", ref newFilter, 64, ImGuiInputTextFlags.EnterReturnsTrue);
+        var enterPressed = ImGui.InputTextWithHint(string.Empty, "筛选...", ref newFilter, 64, ImGuiInputTextFlags.EnterReturnsTrue);
         if (newFilter != Filter)
         {
             Filter      = newFilter;
@@ -338,7 +338,7 @@ public class ItemSelector<T>
         if (ImGui.Button(FontAwesomeIcon.Clipboard.ToIconString(), Vector2.UnitX * width))
             ImGui.OpenPopup(newNamePopupImport);
         using var font = ImRaii.PushFont(UiBuilder.DefaultFont);
-        ImGuiUtil.HoverTooltip("Import from Clipboard");
+        ImGuiUtil.HoverTooltip("从剪贴板导入");
 
         if (!OpenNameField(newNamePopupImport, out var newName))
             return;
@@ -372,7 +372,7 @@ public class ItemSelector<T>
             ImGui.OpenPopup(newNamePopupDuplicate);
 
         using var font = ImRaii.PushFont(UiBuilder.DefaultFont);
-        ImGuiUtil.HoverTooltip("Duplicate Current Selection");
+        ImGuiUtil.HoverTooltip("复制当前选项");
 
         if (!OpenNameField(newNamePopupDuplicate, out var newName))
             return;
@@ -388,10 +388,10 @@ public class ItemSelector<T>
         => ImGui.GetIO().KeyCtrl;
 
     protected virtual string DeleteButtonTooltip()
-        => "Delete Current Selection. Hold Control while clicking.";
+        => "按住Ctrl键点击以删除当前选项。";
 
     protected virtual string AddButtonTooltip()
-        => "Add new item.";
+        => "添加新物品。";
 
     private void DrawDeleteButton(float width)
     {
