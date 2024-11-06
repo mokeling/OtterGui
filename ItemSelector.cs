@@ -236,7 +236,7 @@ public class ItemSelector<T>
             {
                 _dragDropData = idx;
                 ImGui.SetDragDropPayload(MoveLabel, IntPtr.Zero, 0);
-                ImGui.TextUnformatted($"Reordering {idx + 1}...");
+                ImGui.TextUnformatted($"正在重新排序 {idx + 1}...");
             }
         }
 
