@@ -236,7 +236,7 @@ public class ItemSelector<T>
             {
                 _dragDropData = idx;
                 ImGui.SetDragDropPayload(MoveLabel, IntPtr.Zero, 0);
-                ImGui.TextUnformatted($"ÕýÔÚÖØÐÂÅÅÐò {idx + 1}...");
+                ImGui.TextUnformatted($"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {idx + 1}...");
             }
         }
 
@@ -338,7 +338,7 @@ public class ItemSelector<T>
         if (ImGui.Button(FontAwesomeIcon.Clipboard.ToIconString(), Vector2.UnitX * width))
             ImGui.OpenPopup(newNamePopupImport);
         using var font = ImRaii.PushFont(UiBuilder.DefaultFont);
-        ImGuiUtil.HoverTooltip("´Ó¼ôÌù°åµ¼Èë");
+        ImGuiUtil.HoverTooltip("ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½åµ¼ï¿½ï¿½");
 
         if (!OpenNameField(newNamePopupImport, out var newName))
             return;
@@ -372,7 +372,7 @@ public class ItemSelector<T>
             ImGui.OpenPopup(newNamePopupDuplicate);
 
         using var font = ImRaii.PushFont(UiBuilder.DefaultFont);
-        ImGuiUtil.HoverTooltip("¸´ÖÆµ±Ç°Ñ¡Ôñ");
+        ImGuiUtil.HoverTooltip("ï¿½ï¿½ï¿½Æµï¿½Ç°Ñ¡ï¿½ï¿½");
 
         if (!OpenNameField(newNamePopupDuplicate, out var newName))
             return;
@@ -388,10 +388,10 @@ public class ItemSelector<T>
         => ImGui.GetIO().KeyCtrl;
 
     protected virtual string DeleteButtonTooltip()
-        => "°´×¡ Ctrl µ¥»÷ÒÔÉ¾³ýÑ¡ÔñÏî¡£";
+        => "ï¿½ï¿½×¡ Ctrl ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½î¡£";
 
     protected virtual string AddButtonTooltip()
-        => "ÐÂ½¨ÏîÄ¿";
+        => "ï¿½Â½ï¿½ï¿½ï¿½Ä¿";
 
     private void DrawDeleteButton(float width)
     {
