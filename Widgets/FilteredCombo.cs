@@ -147,7 +147,7 @@ public abstract class FilterComboBase<T>
 
         // Draw the text input.
         ImGui.SetNextItemWidth(width);
-        if (LowerString.InputWithHint("##filter", "ɸѡ...", ref _filter))
+        if (LowerString.InputWithHint("##filter", "筛选...", ref _filter))
         {
             _filterDirty = true;
             if (SearchByParts)
