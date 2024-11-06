@@ -388,10 +388,10 @@ public class ItemSelector<T>
         => ImGui.GetIO().KeyCtrl;
 
     protected virtual string DeleteButtonTooltip()
-        => "按住 Ctrl 单击以删除选择项。";
+        => "按住 Ctrl 键单击删除当前选择。";
 
     protected virtual string AddButtonTooltip()
-        => "新建项目";
+        => "添加新项目";
 
     private void DrawDeleteButton(float width)
     {
